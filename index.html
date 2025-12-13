@@ -1,0 +1,1794 @@
+<!--Main HTML file for Akash's Portfolio-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/logo.jpeg">
+  <title>AKASH - Portfolio</title>
+  <meta name="description" content="Akash is a Java Developer and DSA enthusiast based in TamilNadu, India. View his portfolio to learn more about his projects and skills.">
+
+
+  <!-- SEO & Keywords -->
+  <meta name="keywords" content="AKASH, Python Developer, Java Developer, DSA enthusiast, Web Developer">
+  <meta name="author" content="AKASH">
+  
+  <!-- Other Metadata -->
+  <meta name="google-site-verification" content="vvp2OYjF6CFibJc7x2WTbT-4fWFHe6Ue5hYXcaq_LjE">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+  <!-- Loading Screen with Animated Text -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-container">
+      <!-- Typing Text Animation -->
+      <p class="loading-text" id="typing-text">Step Into My Digital Portfolio</p>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="custom-cursor" class="custom-cursor"></div>
+  
+  
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar">
+    <div class="navbar-container">
+      
+      <div class="navbar-links">
+        <a href="#home" class="navbar-link active">Home</a>
+        <a href="#about" class="navbar-link">About</a>
+        <a href="#skills" class="navbar-link">Skills</a>
+        <a href="#projects" class="navbar-link">Projects</a>
+        <a href="#github" class="navbar-link">GitHub</a>
+        <a href="#leetcode" class="navbar-link">Leetcode</a>
+        <a href="#badges" class="navbar-link">Badges</a>
+        <a href="#blogs" class="navbar-link">Blogs</a>
+        <a href="#experience" class="navbar-link">Experience</a>
+        <a href="#certifications" class="navbar-link">Certifications</a>
+        <a href="#education" class="navbar-link">Education</a>
+        
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <div id="theme-icon" class="theme-toggle-icon">
+           
+          </div>
+        </button>
+        
+        <a href="#contact" class="navbar-cta">
+          Request a Project
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      
+      <div class="flex lg:hidden items-center space-x-2">
+        <button id="navbar-toggle" class="navbar-mobile-toggle" aria-label="Toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="navbar-menu" class="navbar-mobile-menu">
+      <a href="#home" class="navbar-mobile-link">Home</a>
+      <a href="#about" class="navbar-mobile-link">About</a>
+      <a href="#skills" class="navbar-mobile-link">Skills</a>
+      <a href="#projects" class="navbar-mobile-link">Projects</a>
+      <a href="#github" class="navbar-mobile-link">GitHub</a>
+      <a href="#leetcode" class="navbar-mobile-link">Leetcode</a>
+      <a href="#badges" class="navbar-mobile-link">Badges</a>
+      <a href="#blogs" class="navbar-mobile-link">Blogs</a>
+      <a href="#experience" class="navbar-mobile-link">Experience</a>
+      <a href="#certifications" class="navbar-mobile-link">Certifications</a>
+      <a href="#education" class="navbar-mobile-link">Education</a>
+      <a href="#contact" class="navbar-cta">
+        Request a Project
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <!-- Background Elements -->
+    <div class="hero-bg">
+      <div class="hero-grid-pattern"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+    </div>
+    
+    <div class="hero-content">
+      <div class="hero-grid">
+        <!-- Left Column - Content -->
+        <div class="hero-text">
+          <div class="space-y-2">
+            <div class="hero-badge">
+              Hey! <span class="animate-wave">👋</span>  I'm
+            </div>
+            <h1 class="hero-title">AKASH S</h1>
+            <div class="hero-subtitle">
+              I'm a <span id="typewriter" class="typewriter"></span>
+            </div>
+          </div>
+          <!--cursor animation-->
+          <style>
+    body {
+      background: #0d1117;
+      margin: 0;
+      min-height: 200vh; 
+    }
+
+      /* Cursor wrapper */
+      .cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: all 0.150s ease;
+      }
+
+      /* Default Neon Glow with animation */
+      .cursor-glow {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.1);
+        box-shadow:
+          0 0 60px rgba(0, 255, 255, 1),
+          0 0 120px rgba(255, 0, 255, 0.8),
+          0 0 180px rgba(127, 1, 245, 0.7),
+          0 0 250px rgba(0, 200, 255, 0.6);
+        animation: neonPulse 2s infinite alternate;
+        transition: all 0.25s ease;
+      }
+
+      /* On text hover → turn into ring (no glow, no animation) */
+      .cursor.text-hover .cursor-glow {
+        background: transparent;
+        border: 2px solid rgba(0, 200, 255, 0.9);
+        box-shadow: none;
+        width: 28px;
+        height: 28px;
+        animation: none; /* stop glowing animation */
+      }
+
+      /* Neon glowing animation */
+      @keyframes neonPulse {
+        from {
+          box-shadow:
+            0 0 60px rgba(0, 255, 255, 1),
+            0 0 120px rgba(255, 0, 255, 0.8),
+            0 0 180px rgba(127, 1, 245, 0.7),
+            0 0 250px rgba(0, 200, 255, 0.6);
+        }
+        to {
+          box-shadow:
+            0 0 80px rgba(255, 0, 255, 1),
+            0 0 150px rgba(0, 255, 255, 0.9),
+            0 0 220px rgba(127, 1, 245, 0.8),
+            0 0 300px rgba(255, 0, 200, 0.7);
+        }
+      }
+      
+        </style>
+        <!-- Custom Cursor -->
+        <div class="cursor">
+          <div class="cursor-dot"></div>
+          <div class="cursor-glow"></div>
+        </div>
+
+        <script>
+          const cursor = document.querySelector(".cursor");
+
+      // Move cursor with mouse
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+      });
+
+      // Add hover effect for text elements
+      document.querySelectorAll("p, span, a, strong, h1, h2, h3, h4, h5, h6").forEach(el => {
+        el.addEventListener("mouseenter", () => {
+          cursor.classList.add("text-hover");
+        });
+        el.addEventListener("mouseleave", () => {
+          cursor.classList.remove("text-hover");
+        });
+      });
+        </script>
+
+
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <a href="tel:+918220623649" class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span class="contact-text">+91 8220623649</span>
+            </a>
+            <a href="mailto:itakash557@gmail.com" class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span class="contact-text">itakash557@gmail.com</span>
+            </a>
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span class="contact-text">TamilNadu, India</span>
+            </div>
+          </div>
+          
+          <!-- Action Buttons -->
+         <div class="action-buttons">
+            <a href="assets/java_resume.pdf" class="btn btn-primary resume-btn" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" x2="8" y1="13" y2="13"></line>
+              <line x1="16" x2="8" y1="17" y2="17"></line>
+              <line x1="10" x2="8" y1="9" y2="9"></line>
+            </svg>
+            <span>View Resume</span>
+          </a>
+
+            <a href="#contact" class="btn btn-primary contact-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>Contact Me</span>
+            </a>
+
+            <style>
+            .resume-btn svg,
+            .contact-btn svg {
+              position: relative;
+              top: 2px; /* adjust to 3px or 4px if you want them a bit lower */
+            }
+            </style>
+          </div>
+          
+          <!-- Social Links -->
+          <div class="social-links">
+            <a href="https://github.com/itakash557-sudo" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/akashit06 " target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/i_amyour_akash?igsh" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://wa.me/918220623649" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.8 7.3L4 21l2.3-3.6a8.5 8.5 0 1 1 14.2-5.9z"/><path d="M8.5 9.5c.2 1 1.2 2.4 2.2 3.2 1 .9 2.2 1.6 3.2 1.8.6.1 1.3-.2 1.7-.7l.4-.6c.1-.2 0-.5-.2-.6l-1.2-.6c-.2-.1-.4 0-.5.2l-.3.5c-.1.1-.3.2-.4.1-1.4-.4-2.8-1.7-3.2-3.1 0-.1 0-.3.1-.4l.4-.4c.1-.2.1-.4-.1-.6l-.8-1.2c-.1-.2-.4-.2-.6 0l-.6.4c-.5.3-.8 1-.7 1.6z"/></svg></a>
+
+          </div>
+        </div>
+        
+        <!-- Right Column - Profile Image -->
+        <div class="hero-image-container">
+          <!-- Floating circles -->
+          <div class="hero-circle hero-circle-1"></div>
+          <div class="hero-circle hero-circle-2"></div>
+          <div class="hero-circle hero-circle-3"></div>
+          <div class="hero-circle hero-circle-4"></div>
+          
+          <img src="assets/akashprofessionalpic.jpg" alt="Akash" class="hero-image">
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="hero-scroll-indicator">
+        <a href="#about" class="hero-scroll-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14"></path>
+            <path d="m19 12-7 7-7-7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section id="about" class="about-section">
+  <div class="about-container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">
+      Just a curious Java developer who loves building scalable systems 
+      (and debugging with coffee at midnight ☕).
+    </p>
+
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Hello! I'm <strong>Akash S</strong>,a passionate Java Developer with strong expertise in building scalable and secure applications. I specialize in backend development using Java and Spring Boot, backed by a solid foundation in Data Structures and Algorithms.I believe in building maintainable systems that power seamless digital experiences.By combining my technical expertise with strong problem solving skills I deliver solutions that are efficient, secure and future ready.I believe in building maintainable systems that power seamless digital experiences.By combining my technical expertise with strong problem solving skills, I deliver solutions that are efficient, secure and future-ready.
+        </p>
+      </div>
+    </div>
+
+    <!-- Two Column Cards -->
+    <div class="about-stats">
+      <div class="about-card">
+        <h3>👨‍💻 Who I Am</h3>
+        <ul>
+          <li>A developer who fell in love with Java & backend systems.</li>
+          <li>Excited when solving tricky bugs (yes even the weird ones 😅).</li>
+          <li>Always learning something new & applying it to projects.</li>
+        </ul> 
+      </div>
+
+      <div class="about-card">
+        <h3>🚀 What I Do</h3>
+        <ul>
+          <li>Turn coffee into Spring Boot APIs ☕ ➝ ⚙️.</li>
+          <li>Love optimizing database queries for speed & scalability.</li>
+          <li>Share my learnings with others because we grow together 🌱.</li>
+        </ul>
+      </div>
+      <div class="about-card">
+      <h3>🎯 My Goals</h3>
+      <ul>
+          <li>Build products people actually need (not just GitHub flexes).</li>
+          <li>Turn late-night ideas into deployable apps by morning 🌙➡️🌞.</li>
+          <li>Blend Java expertise with cloud innovation.</li>
+      </ul>
+      </div>
+      <div class="about-grid">
+      <div class="about-card">
+      <h3>📚 Continuous Learning</h3>
+      <ul>
+          <li>Always exploring new frameworks & tools to stay sharp.</li>
+          <li>Solving DSA problems daily to keep my brain in “algorithm mode.</li>
+          <li>Experimenting with side projects just for the fun of it 🚀.</li>
+        </ul>
+      <div class="about-grid">
+  </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Section Background */
+.about-section {
+ background-color: var(--bg-secondary);
+  color: #1479d1;
+  padding: 120px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Title */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #58a6ff;
+}
+
+/* Subtitle */
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #8b949e;
+  margin-bottom: 40px;
+}
+
+/* About Content */
+.about-content {
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #c9d1d9;
+}
+
+/* Cards Layout */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-card {
+  background: #1c1f26;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.about-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #58a6ff;
+}
+
+.about-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-card ul li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+</style>
+
+        <div class="about-statss">
+          <div class="stat-card">
+            <div class="stat-number">0+</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">0+</div>
+            <div class="stat-label">DSA Problems Solved</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">1+</div>
+            <div class="stat-label">Technical Articles</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section">
+  <div class="skills-container">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-grid">
+
+      <!-- Backend -->
+      <a href="https://www.java.com/" target="_blank" class="skill-card">
+        <i class="fab fa-java skill-icon" style="color:#f89820;"></i>
+        <span class="skill-name">Java</span>
+      </a>
+      <!-- Spring Boot -->
+<a href="https://spring.io/projects/spring-boot" target="_blank" class="skill-card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg" class="skill-img">
+  <span class="skill-name">Spring Boot</span>
+</a>
+
+      <a href="#" target="_blank" class="skill-card">
+        <i class="fas fa-project-diagram skill-icon" style="color:#4caf50;"></i>
+        <span class="skill-name">Microservices</span>
+      </a>
+      <a href="#" target="_blank" class="skill-card">
+        <i class="fas fa-cloud skill-icon" style="color:#03a9f4;"></i>
+        <span class="skill-name">REST APIs</span>
+      </a>
+
+      <!-- Database / ORM -->
+      <a href="https://www.mysql.com/" target="_blank" class="skill-card">
+        <i class="fas fa-database skill-icon" style="color:#00758f;"></i>
+        <span class="skill-name">MySQL</span>
+      </a>
+      <a href="https://www.postgresql.org/" target="_blank" class="skill-card">
+        <i class="fas fa-database skill-icon" style="color:#336791;"></i>
+        <span class="skill-name">PostgreSQL</span>
+      </a>
+      <a href="https://hibernate.org/" target="_blank" class="skill-card">
+        <img src="https://hibernate.org/images/hibernate-logo.svg" class="skill-img">
+        <span class="skill-name">Hibernate</span>
+      </a>
+      <a href="#" target="_blank" class="skill-card">
+        <i class="fas fa-database skill-icon" style="color:#6a1b9a;"></i>
+        <span class="skill-name">JPA</span>
+      </a>
+
+      <!-- Tools -->
+      <a href="https://git-scm.com/" target="_blank" class="skill-card">
+        <i class="fab fa-git-alt skill-icon" style="color:#f05033;"></i>
+        <span class="skill-name">Git</span>
+      </a>
+      <a href="https://github.com/" target="_blank" class="skill-card">
+        <i class="fab fa-github skill-icon" style="color:#000000;"></i>
+        <span class="skill-name">GitHub</span>
+      </a>
+      <a href="https://maven.apache.org/" target="_blank" class="skill-card">
+        <img src="https://maven.apache.org/images/maven-logo-black-on-white.png" class="skill-img">
+        <span class="skill-name">Maven</span>
+      </a>
+      <a href="https://www.docker.com/" target="_blank" class="skill-card">
+        <i class="fab fa-docker skill-icon" style="color:#0db7ed;"></i>
+        <span class="skill-name">Docker</span>
+      </a>
+      <!-- Postman -->
+      <a href="https://www.postman.com/" target="_blank" class="skill-card">
+  <i class="fas fa-paper-plane skill-icon" style="color:#FF6C37;"></i>
+  <span class="skill-name">Postman</span>
+</a>
+<!-- Add this in your <head> -->
+
+
+
+      <a href="https://code.visualstudio.com/" target="_blank" class="skill-card">
+        <i class="fas fa-code skill-icon" style="color:#007acc;"></i>
+        <span class="skill-name">VS Code</span>
+      </a>
+
+      <!-- Cloud -->
+      <a href="https://aws.amazon.com/" target="_blank" class="skill-card">
+        <i class="fab fa-aws skill-icon" style="color:#ff9900;"></i>
+        <span class="skill-name">AWS</span>
+      </a>
+      <a href="https://cloud.google.com/" target="_blank" class="skill-card">
+        <i class="fab fa-google skill-icon" style="color:#4285f4;"></i>
+        <span class="skill-name">GCP</span>
+      </a>
+
+      <a href="#" target="_blank" class="skill-card">
+        <i class="fas fa-vial skill-icon" style="color:#4caf50;"></i>
+        <span class="skill-name">JUnit</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+  
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="projects-container">
+      <h2 class="section-title">Projects</h2>
+      
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-card-glow"></div>
+          <div class="project-card-content">
+            <div class="project-image-container">
+            <img src="assets/project1.jpeg" alt="Evidence Prevention System using Blockchain" class="project-image">
+              <div class="project-overlay">
+                <a href="" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" x2="21" y1="14" y2="3"></line>
+                  </svg>
+                </a>
+                <a href="https://github.com/itakash557-sudo" target="_blank" rel="noopener noreferrer" class="project-link project-github-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-details">
+              <h3 class="project-title">Evidence Prevention System using Blockchain</h3>
+              <p class="project-description">Decentralized and Secure Evidence Safeguarding via Blockchain</p>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">SQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- GitHub Section -->
+<section id="github" class="skills-section">
+  <div class="skills-container">
+    <h2 class="section-title">GitHub Contributions</h2>
+    <div class="calendar">
+      <!-- Interactive contribution graph loads here -->
+    </div>
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+  #github {
+   #github {
+  padding: 60px 20px;
+  background: #1c2333; /* flat dark bluish color */
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+  }
+
+  #github .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #0ea5e9;
+  }
+
+  .calendar {
+    background-color: #1a1a2e;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #38bdf8;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+</style>
+
+<!-- GitHub Calendar Library -->
+<link rel="stylesheet" href="https://unpkg.com/github-calendar/dist/github-calendar-responsive.css"/>
+<script src="https://unpkg.com/github-calendar/dist/github-calendar.min.js"></script>
+<script>
+  // Replace "itakash557-sudo" with your GitHub username
+  GitHubCalendar(".calendar", "itakash557-sudo", { responsive: true });
+</script>
+<!-- GitHub Profile Card -->
+<section id="github-profile" class="github-profile-section">
+  <div class="github-card">
+    <div class="profile-left">
+      <img id="github-avatar" class="avatar" src="" alt="GitHub Avatar">
+      <div class="profile-info">
+        <h3 id="github-name"></h3>
+        <p id="github-username"></p>
+        <p id="github-bio"></p>
+      </div>
+    </div>
+    <div class="profile-right">
+      <p><span id="followers"></span> Followers</p>
+      <p><span id="repos"></span> Repos</p>
+      <a id="github-link" href="" target="_blank" class="btn">View Profile</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  
+/* GitHub Section (Graph) */
+#github {
+  padding: 40px 20px;
+  background: #1c2333; /* flat dark bluish color */
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+  margin-top: 30px;     /* gap above graph */
+  margin-bottom: 25px;  /* gap below graph */
+}
+
+#github .section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0ea5e9;
+}
+
+.calendar {
+  background-color: #1a1a2e;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid #38bdf8;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Hide stats under the graph */
+.js-calendar-graph-stats,
+.ContributionCalendar-footer {
+  display: none !important;
+}
+
+/* GitHub Profile Card Section */
+.github-profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;  /* increased padding */
+  margin-top: 0;  /* removes extra top gap */
+}
+
+.github-card {
+  background: #1a1a2e;
+  color: #e6edf3;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  padding: 20px 30px;
+  width: 75%; /* 🔥 75% screen cover */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.profile-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #58a6ff;
+}
+
+.profile-info h3 { 
+  margin: 0; 
+  font-size: 20px; 
+  font-weight: bold; 
+}
+
+.profile-info p { 
+  margin: 2px 0; 
+  font-size: 14px; 
+  color: #8b949e; 
+}
+
+.profile-right {
+  text-align: right;
+}
+
+.profile-right p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #238636;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover { background: #2ea043; }
+
+</style>
+
+<!-- make sure you load the latest build -->
+<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+
+<script>
+  const username = "itakash557-sudo";
+
+  // Profile card fetch (unchanged)
+  fetch(`https://api.github.com/users/${username}`)
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById("github-avatar").src = d.avatar_url;
+      document.getElementById("github-name").textContent = d.name || "No Name";
+      document.getElementById("github-username").textContent = "@" + d.login;
+      document.getElementById("github-bio").textContent = d.bio || "No bio available";
+      document.getElementById("followers").textContent = d.followers;
+      document.getElementById("repos").textContent = d.public_repos;
+      document.getElementById("github-link").href = d.html_url;
+    });
+
+  // ✅ Calendar with stats disabled + no summary text
+  GitHubCalendar(".calendar", username, {
+    responsive: true,
+    global_stats: false,  // <- hides total/longest/current
+    summary_text: ""      // <- removes the “Summary …” line
+  });
+
+  // 🔒 Fallback killer (if CDN cached older build)
+  const killUnwanted = () => {
+    const killTexts = ["Contributions in the last year", "Longest streak", "Current streak"];
+    document.querySelectorAll(".calendar *").forEach(el => {
+      const t = (el.textContent || "").trim();
+      if (killTexts.some(k => t.includes(k))) el.remove();
+    });
+  };
+  // run once after load + observe future injections
+  killUnwanted();
+  new MutationObserver(killUnwanted).observe(
+    document.querySelector(".calendar"),
+    { childList: true, subtree: true }
+  );
+  
+</script>
+
+
+  <!-- Leetcode Section Placeholder -->
+<section id="leetcode" class="projects-section">
+  <div class="projects-container">
+    <h2 class="section-title">Leetcode Progress</h2>
+    <p class="subtitle">Between classes and coding, I somehow manage to solve some DSA problems 😅</p>
+  </div>
+
+  <div class="leetcode-container">
+    <!-- Left Content (No Box) -->
+    <div class="left-content">
+      <h3 id="lc-user">My LeetCode Grind</h3>
+      <p>
+        Started solving LeetCode problems to get better at DSA and honestly, it's become a daily habit now.  
+        Some days I breeze through easy problems, other days medium problems make me question my life choices 🤯  
+      </p>
+      <p>
+        I've tackled problems across arrays, trees, graphs, and that scary beast called dynamic programming.  
+        The goal? Stay consistent, learn something new every day, and maybe not panic during technical interviews!
+      </p>
+      <a href="https://leetcode.com/akashit/" target="_blank" class="view-profile-btn">View Profile</a>
+    </div>
+
+    <!-- Right Graph -->
+    <div class="right-content">
+      <img src="https://leetcard.jacoblin.cool/akashit?theme=dark&ext=heatmap"
+           alt="LeetCode Contribution Graph"
+           class="graph">
+    </div>
+  </div>
+</section>
+
+<style>
+/* Section */
+#leetcode {
+  padding: 120px 20px;  /* increased padding */
+  background: linear-gradient(135deg,#0d1117,#161b22);
+  color: #e6edf3;
+  text-align: center;
+}
+.section-title {
+  font-size: 2.2 rem;
+  color: #58a6ff;
+  margin-bottom: 10px;
+}
+.subtitle {
+  color: #a0a9b8;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+/* Layout */
+.leetcode-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Left content (No box) */
+.left-content {
+  width: 380px;
+  text-align: left;
+}
+.left-content h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #58a6ff;
+}
+.left-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  color: #cdd9e5;
+}
+.view-profile-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: #238636;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+.view-profile-btn:hover {
+  background: #2ea043;
+  transform: scale(1.05);
+}
+
+/* Right graph */
+.right-content {
+  flex: 0 0 520px;
+}
+.graph {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+  border: 2px solid #2e2e3d;
+  transition: transform 0.3s ease-in-out;
+}
+.graph:hover {
+  transform: scale(1.08); /* Zoom-in effect */
+}
+</style>
+
+  <!-- Badges Section Placeholder -->
+  <!-- 🎖 My Badges & Achievements Section -->
+<section id="badges" class="badges-section">
+  <h2> My Badges & Achievements</h2>
+  <div class="badges-container">
+
+    <!-- CCNA Badge (only this one rolls) -->
+    <div class="badge-card">
+      <img src="assets/ccnabadge.png" alt="CCNA Badge" class="badge-img coin-roll">
+      <h3>CCNA Certified</h3>
+      <p>Introduction to Networks</p>
+    </div>
+     <!-- blog Badge -->
+    <div class="badge-card">
+      <img src="assets/blogbadge.webp" alt="blog Badge" class="badge-img coin-roll">
+      <h3>Certified Blogger</h3>
+      <p>For contributing to the Hashnode community</p>
+    </div>
+
+
+  </div>
+</section>
+
+<style>
+.badges-section {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 0;
+}
+
+.badges-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #58a6ff;
+  margin-top: 0;    /* heading மேலே செல்லும் */
+  margin-bottom: 30px;
+  display: inline-block;
+  position: relative;
+}
+
+.badges-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 6px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #4facfe, #7366ff);
+}
+
+.badges-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ❄️ Frosted Ice Effect for All Cards */
+.badge-card {
+  width: 250px;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  background: rgba(200, 240, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.badge-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(91, 134, 229, 0.7) inset, 
+              0 0 40px rgba(131, 96, 195, 0.4) inset, 
+              0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Cracked Ice Texture Overlay */
+.badge-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/ice.png"),
+              radial-gradient(circle at top left, rgba(255,255,255,0.3), transparent 70%);
+  background-size: cover;
+  mix-blend-mode: screen;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Frost Shine Reflection */
+.badge-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.25) 0%, transparent 60%);
+  transform: rotate(25deg);
+  animation: frostShine 6s infinite;
+  pointer-events: none;
+}
+
+@keyframes frostShine {
+  0%   { transform: translateX(-150%) rotate(25deg); }
+  50%  { transform: translateX(150%) rotate(25deg); }
+  100% { transform: translateX(-150%) rotate(25deg); }
+}
+
+/* Badge Image */
+.badge-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px;
+}
+
+/* --- Only CCNA Badge Rolls + Glow --- */
+.coin-roll {
+  animation: coinRoll 6s ease-in-out infinite, glowPulse 4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes coinRoll {
+  0%, 20%   { transform: rotateY(0deg); }
+  30%       { transform: rotateY(360deg); }
+  50%       { transform: rotateY(360deg); }
+  70%       { transform: rotateY(720deg); }
+  100%      { transform: rotateY(720deg); }
+}
+
+@keyframes glowPulse {
+  0%   { box-shadow: 0 0 8px rgba(88,166,255,0.5), 0 0 15px rgba(88,166,255,0.3); }
+  50%  { box-shadow: 0 0 20px rgba(88,166,255,0.9), 0 0 35px rgba(88,166,255,0.6); }
+  100% { box-shadow: 0 0 8px rgba(88,166,255,0.5), 0 0 15px rgba(88,166,255,0.3); }
+}
+
+.badge-card h3 {
+  margin: 10px 0 5px;
+  color: #fff;
+}
+
+.badge-card p {
+  font-size: 14px;
+  color: #dbe9f6;
+}
+</style>
+
+  <!-- Blogs Section Placeholder -->
+  <section id="blogs" class="blog-section">
+  <h2>Blog</h2>
+  <div class="blog-container">
+
+    <!-- Blog 1 -->
+    <div class="blog-card">
+      <img src="assets\blogimage.png" alt="CCNA Blog">
+      <div class="blog-content">
+        <h3>My CCNA Journey</h3>
+        <p>How I started preparing for CCNA and what I learned from Introduction to Networks.</p>
+        <a href="https://hashnode.com/@Akashit" target="_blank">Read More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+    }
+
+    .blog-section {
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #0d1117, #161b22);
+      text-align: center;
+    }
+
+    .blog-section h2 {
+      font-size: 2rem;
+      color: #58a6ff;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Gradient underline */
+    .blog-section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 5px;
+      background: linear-gradient(90deg, #58a6ff, #8b5cf6);
+      margin: 8px auto 0;
+      border-radius: 4px;
+    }
+
+    .blog-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .blog-card {
+      background: #1e1e2f;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .blog-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 18px;
+      text-align: left;
+    }
+
+    .blog-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #f0f6fc;
+    }
+
+    .blog-content p {
+      font-size: 14px;
+      color: #cdd9e5;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .blog-content a {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #238636;
+      color: white;
+      font-size: 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .blog-content a:hover {
+      background: #2ea043;
+    }
+  </style>
+  
+<!-- Timeline Section -->
+<!-- 🌟 Experience Section -->
+<section id="experience" class="experience-section section-padding">
+  <div class="containerr">
+    <div class="section-title">
+      <h2>Experience</h2>
+    </div>
+    <style>
+      .experience-section {
+  padding: 10px 20px;  /* Reduce from 80px */
+}
+    </style>
+    <section class="timeline-section">
+      <div class="timeline">
+        
+        <!-- First Experience -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            🎯
+          </div>
+          <div class="timeline-content">
+            <h3>Web Developer Intern</h3>
+            <a href="https://codebindtechnologies.com/" target="_blank" class="company">CodeBind Technologies</a>        
+            <span class="date">Feb 2025</span>
+            <ul>
+              <li>Understood how frontend communicates with the backend.</li>
+              <li>Learned to design user friendly interfaces and connect them with server side logic.</li>
+              <li>Experienced how forms/data from frontend are sent to backend for processing & storage in database.</li>
+            </ul>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>PHP</span>
+              <span>SQL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".timeline-content");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    items.forEach(item => {
+      observer.observe(item);
+    });
+  });
+</script>
+
+  <!-- Certifications Section -->
+<section id="certifications" class="certifications-section">
+  <h2 class="section-title">Certifications</h2>
+  <div class="cert-carousel-wrapper">
+    <button class="slide-btn left-btn">&lt;</button>
+    <div class="cert-carousel">
+      <div class="cert-track">
+        <!-- Certificates -->
+        <div class="cert-card">
+          <img src="assets/aws.jpg" alt="AWS Certificate">
+          <div class="cert-overlay">
+            <a href="" target="" class="verify-btn">Verify</a>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <img src="assets/ccnacertificate.jpg" alt="CCNA Certificate">
+          <div class="cert-overlay">
+            <a href="https://www.credly.com/badges/f74ad404-6aa4-461d-a3f1-9cb9e1553901" target="_blank" class="verify-btn">Verify</a>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <img src="assets/javabootcamp.jpg" alt="Java Bootcamp Certificate">
+          <div class="cert-overlay">
+            <a href="verify-link-java" target="_blank" class="verify-btn">Verify</a>
+          </div>
+        </div>
+
+        <!-- Duplicate set for infinite loop -->
+        <div class="cert-card">
+          <img src="assets/aws.jpg" alt="AWS Certificate">
+          <div class="cert-overlay">
+            <a href="verify-link-aws" target="_blank" class="verify-btn">Verify</a>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <img src="assets/ccnacertificate.jpg" alt="CCNA Certificate">
+          <div class="cert-overlay">
+            <a href="verify-link-ccna" target="_blank" class="verify-btn">Verify</a>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <img src="assets/javabootcamp.jpg" alt="Java Bootcamp Certificate">
+          <div class="cert-overlay">
+            <a href="verify-link-java" target="_blank" class="verify-btn">Verify</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="slide-btn right-btn">&gt;</button>
+  </div>
+</section>
+<style>
+.certifications-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #0a0f1c;
+  color: #fff;
+}
+
+.cert-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.cert-carousel {
+  overflow: hidden;
+  width: 90%;
+}
+
+.cert-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s linear;
+}
+
+.cert-card {
+  width: 320px;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.cert-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cert-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.cert-card:hover .cert-overlay {
+  opacity: 1;
+}
+
+.verify-btn {
+  background: #4e9eff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.verify-btn:hover {
+  background: #1f6feb;
+}
+
+/* Slide buttons */
+.slide-btn {
+  background: linear-gradient(135deg, #4e9eff, #1f6feb);
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.slide-btn:hover {
+  transform: translateY(-50%) scale(1.2);
+  background: linear-gradient(135deg, #1f6feb, #4e9eff);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+.left-btn { left: -30px; }
+.right-btn { right: -30px; }
+</style>
+
+<script>
+  const track = document.querySelector('.cert-track');
+const cards = Array.from(document.querySelectorAll('.cert-card'));
+
+// Calculate original number of unique cards (before duplicate for looping)
+const cardCount = cards.length / 2; 
+let index = 0;
+
+// Get the gap dynamically from CSS
+const trackStyle = getComputedStyle(track);
+const gap = parseInt(trackStyle.gap) || 20;
+
+// Function to slide certificates
+function slideCerts(direction = 1) {
+  index += direction;
+  const cardWidth = cards[0].offsetWidth + gap;
+
+  // Apply transform with transition
+  track.style.transition = 'transform 0.5s linear';
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
+
+  // Forward infinite loop
+  if (index >= cardCount) {
+    setTimeout(() => {
+      track.style.transition = 'none';
+      track.style.transform = `translateX(0px)`;
+      index = 0;
+    }, 500);
+  }
+
+  // Backward infinite loop
+  if (index < 0) {
+    track.style.transition = 'none';
+    index = cardCount - 1;
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+}
+
+// Automatic slide every 2 seconds
+let autoSlide = setInterval(() => slideCerts(1), 2000);
+
+// Manual buttons
+document.querySelector('.left-btn').addEventListener('click', () => {
+  clearInterval(autoSlide);
+  slideCerts(-1);
+  autoSlide = setInterval(() => slideCerts(1), 2000);
+});
+
+document.querySelector('.right-btn').addEventListener('click', () => {
+  clearInterval(autoSlide);
+  slideCerts(1);
+  autoSlide = setInterval(() => slideCerts(1), 2000);
+});
+
+</script>
+  <!-- Education Section Placeholder -->
+  <!-- Education Section -->
+<section id="education" class="education-section">
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+
+    <div class="timeline">
+
+      <!-- B.Tech -->
+      <div class="timeline-item">
+        <div class="timeline-box">
+          <h3>B.Tech in Information Technology</h3>
+          <p class="institute">IFET College Of Engineering, Villupuram</p>
+          <p class="details">📅 2023 - Present | 🏆 Score: 83%</p>
+        </div>
+      </div>
+
+      <!-- XII -->
+      <div class="timeline-item">
+        <div class="timeline-box">
+          <h3>Senior Secondary (XII)</h3>
+          <p class="institute">Kalaivani Matric Hr Sec School, Villupuram</p>
+          <p class="details">📅 2022 - 2023 | 🏆 Score: 82%</p>
+        </div>
+      </div>
+
+      <!-- X -->
+      <div class="timeline-item">
+        <div class="timeline-box">
+          <h3>Secondary (X)</h3>
+          <p class="institute">Kalaivani Matric Hr Sec School, Villupuram</p>
+          <p class="details">📅 2020 - 2021 | 🏆 All Pass</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+    body {
+      margin: 0;
+      background: #151d32;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+    .education-section {
+      padding: 50px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #4da6ff;
+    }
+
+    /* Timeline container (now just a wrapper) */
+    .timeline {
+      max-width: 900px;
+      margin: auto;
+      
+    }
+
+    /* Timeline items */
+    .timeline-item {
+      margin-bottom: 40px;
+    }
+
+    /* Education box */
+    .timeline-box {
+      background: #101828;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .timeline-box::before {
+      content: "";
+      position: absolute;
+      left: -50px;
+      top: 25px;
+      width: 20px;
+      height: 3px;
+      background: #4da6ff;
+    }
+    /* Hover effect */
+    .timeline-box:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 6px 25px rgba(77,166,255,0.8);
+    }
+
+    /* Box content */
+    .timeline-box h3 {
+      margin: 0 0 5px;
+      font-size: 1.2rem;
+      color: #4da6ff;
+    }
+
+    .institute {
+      font-size: 1rem;
+      color: #aaa;
+    }
+
+    .details {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+
+  
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <h2 class="section-title">Get In Touch</h2>
+      
+      <div class="contact-grid">
+        <!-- Left Column: Contact Info -->
+        <div class="contact-info-card">
+          <h3 class="contact-info-title">Let's Connect</h3>
+          <p class="contact-info-text">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+          </p>
+          
+          <div class="contact-info-links">
+            <a href="mailto:itakash557@gmail.com" class="contact-info-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span>itakash557@gmail.com</span>
+            </a>
+            <a href="https://github.com/itakash557-sudo" target="_blank" rel="noopener noreferrer" class="contact-info-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+              <span>github.com/itakash557-sudo</span>
+            </a>
+            <a href="https://www.linkedin.com/in/akashit06" target="_blank" rel="noopener noreferrer" class="contact-info-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span>linkedin.com/in/akashit06</span>
+            </a>
+          </div>
+        </div>
+        
+       <!-- Right Column: Contact Form -->
+<div class="contact-form-card">
+  <form
+    id="contact-form"
+    class="contact-form"
+    action="https://formspree.io/f/myzropwv"
+    method="POST"
+  >
+
+    <div class="form-group">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Enter your name"
+        class="form-input"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="Enter your email"
+        class="form-input"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="message" class="form-label">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        required
+        placeholder="Enter your message"
+        rows="4"
+        class="form-textarea"
+      ></textarea>
+    </div>
+
+    <!-- Optional: Email subject -->
+    <input type="hidden" name="_subject" value="New Contact Form Message">
+
+    <button type="submit" class="form-submit">
+      Send Message
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 8.35V15a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35a2 2 0 0 1 .8-1.6l8-6.25a2 2 0 0 1 2.4 0l8 6.25a2 2 0 0 1 .8 1.6Z"></path>
+        <path d="m22 8-11 5-9-5"></path>
+      </svg>
+    </button>
+
+    <div id="form-status"></div>
+
+    </form>
+  </div>
+
+      </div>
+    </div>
+  </section>
+  <script>
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        status.innerHTML = "<p style='color: green;'>Message sent successfully ✅</p>";
+        form.reset();
+      } else {
+        status.innerHTML = "<p style='color: red;'>Something went wrong ❌</p>";
+      }
+    } catch (error) {
+      status.innerHTML = "<p style='color: red;'>Network error ❌</p>";
+    }
+  });
+</script>
+
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-gradient"></div>
+    <div class="footer-container">
+      <!-- Navigation Links -->
+      <nav class="footer-nav">
+        <a href="#home" class="footer-link">Home</a>
+        <a href="#about" class="footer-link">About</a>
+        <a href="#skills" class="footer-link">Skills</a>
+        <a href="#projects" class="footer-link">Projects</a>
+        <a href="#github" class="footer-link">GitHub</a>
+        <a href="#leetcode" class="footer-link">Leetcode</a>
+        <a href="#badges" class="footer-link">Badges</a>
+        <a href="#blogs" class="footer-link">Blogs</a>
+        <a href="#experience" class="footer-link">Experience</a>
+        <a href="#certifications" class="footer-link">Certifications</a>
+        <a href="#education" class="footer-link">Education</a>
+        <a href="#contact" class="footer-link">Contact</a>
+      </nav>
+      
+      <!-- Social Links -->
+      <div class="footer-social">
+        <div class="social-links">
+          <a href="https://github.com/itakash557-sudo" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/akashit06" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect width="4" height="12" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/i_amyour_akash" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+          </a>
+                      <a href="https://wa.me/918220623649" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.8 7.3L4 21l2.3-3.6a8.5 8.5 0 1 1 14.2-5.9z"/><path d="M8.5 9.5c.2 1 1.2 2.4 2.2 3.2 1 .9 2.2 1.6 3.2 1.8.6.1 1.3-.2 1.7-.7l.4-.6c.1-.2 0-.5-.2-.6l-1.2-.6c-.2-.1-.4 0-.5.2l-.3.5c-.1.1-.3.2-.4.1-1.4-.4-2.8-1.7-3.2-3.1 0-.1 0-.3.1-.4l.4-.4c.1-.2.1-.4-.1-.6l-.8-1.2c-.1-.2-.4-.2-.6 0l-.6.4c-.5.3-.8 1-.7 1.6z"/></svg></a>
+
+        </div>
+      </div>
+      
+      <!-- Copyright -->
+      <div class="footer-copyright">
+        <p>© <span id="current-year">2025</span> Akash. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
