@@ -61,6 +61,12 @@
   --text-primary: var(--color-gray-900);
   --text-secondary: var(--color-gray-600);
   --border-color: var(--color-gray-200);
+  --theme-surface-card: var(--color-white);
+  --theme-surface-raised: #f3f6fb;
+  --theme-text-muted: #596579;
+  --theme-accent: #1d4ed8;
+  --theme-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+  --theme-shadow-strong: 0 12px 30px rgba(15, 23, 42, 0.16);
 }
 
 /* Global Styles */
@@ -151,10 +157,12 @@ a {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  width: min(100%, 42rem);
 }
 
 /* Loading Text - Typing Animation */
 .loading-text {
+  max-width: 100%;
   font-size: 2.75rem;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -205,6 +213,32 @@ a {
   100% {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  .loading-screen {
+    height: 100vh;
+    height: 100svh;
+    box-sizing: border-box;
+    padding: env(safe-area-inset-top) 1rem env(safe-area-inset-bottom);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .loading-container {
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+  }
+
+  .loading-text {
+    width: 100%;
+    font-size: clamp(1.05rem, 5.3vw, 1.35rem);
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(30, end) forwards;
   }
 }
 
@@ -2092,6 +2126,11 @@ section {
   z-index: 9999;
   transform: translate(-50%, -50%);
   transition: all 0.150s ease;
+  opacity: 0;
+}
+
+.cursor.is-visible {
+  opacity: 1;
 }
 
 /* Default Neon Glow with animation */
@@ -2756,6 +2795,476 @@ section {
   color: #ccc;
 }
 
+/* Responsive layout refinements */
+html {
+  scroll-padding-top: 5rem;
+}
+
+body img,
+body svg {
+  max-width: 100%;
+}
+
+body section[id] {
+  scroll-margin-top: 5rem;
+}
+
+.navbar .navbar-container {
+  min-height: 3rem;
+  height: auto;
+}
+
+.navbar .navbar-mobile-menu {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  width: 100%;
+  max-height: calc(100vh - 5rem);
+  overflow-y: auto;
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+
+.navbar .navbar-mobile-menu > .navbar-cta {
+  justify-content: center;
+  margin: 0.5rem 0.75rem 0.25rem;
+}
+
+.hero-grid,
+.contact-grid {
+  min-width: 0;
+}
+
+.hero-text,
+.project-card,
+.contact-info-card,
+.contact-form-card {
+  min-width: 0;
+}
+
+.about-statss {
+  padding: 1.5rem 0;
+  gap: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.skills-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+}
+
+.leetcode-container {
+  gap: clamp(1.5rem, 5vw, 3.75rem);
+  padding-inline: 1rem;
+}
+
+.leetcode-container .left-content,
+.leetcode-container .right-content {
+  flex: 1 1 20rem;
+  width: min(100%, 32rem);
+  min-width: 0;
+}
+
+.leetcode-container .graph {
+  display: block;
+}
+
+.github-profile-section .github-card {
+  width: min(100%, 60rem);
+  min-width: 0;
+  gap: 1.5rem;
+}
+
+.certifications-section .cert-carousel {
+  width: calc(100% - 5rem);
+}
+
+.certifications-section .cert-card {
+  width: min(20rem, calc(100vw - 7rem));
+  height: auto;
+  aspect-ratio: 8 / 5;
+}
+
+.certifications-section .slide-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.75rem;
+}
+
+.certifications-section .left-btn {
+  left: 0;
+}
+
+.certifications-section .right-btn {
+  right: 0;
+}
+
+.education-section .timeline {
+  width: 100%;
+}
+
+.education-section .timeline-box {
+  position: relative;
+  overflow-wrap: anywhere;
+}
+
+.education-section .timeline-box::before {
+  display: none;
+}
+
+.contact-info-link,
+.contact-item {
+  min-width: 0;
+}
+
+.contact-info-link span,
+.contact-text {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1279px) {
+  .navbar .navbar-links {
+    display: none;
+  }
+
+  .navbar .navbar-mobile-toggle {
+    display: flex;
+  }
+
+  .navbar .navbar-container > .flex {
+    display: flex;
+  }
+}
+
+@media (min-width: 1280px) {
+  .navbar .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.15rem, 0.5vw, 0.6rem);
+  }
+
+  .navbar .navbar-link {
+    padding-inline: 0.35rem;
+    font-size: 0.8rem;
+  }
+
+  .navbar .navbar-mobile-toggle,
+  .navbar .navbar-container > .flex {
+    display: flex;
+  }
+
+  .navbar .navbar-mobile-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  body section[id] {
+    padding-block: clamp(3.5rem, 10vw, 5rem);
+    padding-inline: 1rem;
+  }
+
+  body section#about {
+    padding-block: clamp(3.5rem, 10vw, 5rem);
+  }
+
+  .navbar {
+    width: calc(100% - 2rem);
+  }
+
+  .navbar .navbar-container {
+    padding-inline: 0.75rem;
+  }
+
+  .navbar .navbar-mobile-menu {
+    padding: 0.5rem 0.75rem 0.75rem;
+  }
+
+  .hero-section {
+    min-height: 0;
+    padding: 6rem 1rem 3rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .hero-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 4.5vw, 1.25rem);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-image-container {
+    max-height: none;
+    min-height: clamp(14rem, 65vw, 21rem);
+  }
+
+  .hero-image {
+    width: clamp(12rem, 58vw, 20rem);
+  }
+
+  .hero-circle {
+    width: clamp(3rem, 12vw, 5rem);
+    height: clamp(3rem, 12vw, 5rem);
+  }
+
+  .hero-circle-1 {
+    top: 0;
+  }
+
+  .hero-circle-3 {
+    bottom: 0;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+
+  body .section-title {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  .about-statss {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-statss .stat-card {
+    padding: 1rem 0.75rem;
+  }
+
+  .about-statss .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .projects-container {
+    padding-inline: 0;
+  }
+
+  .project-details {
+    padding: 1.25rem;
+  }
+
+  .project-tags {
+    gap: 0.4rem;
+  }
+
+  body #github {
+    padding: 2rem 1rem;
+  }
+
+  #github .calendar {
+    padding: 0.75rem;
+  }
+
+  .github-profile-section {
+    padding: 3rem 1rem;
+  }
+
+  .github-profile-section .github-card,
+  .github-profile-section .profile-left {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .github-profile-section .github-card {
+    padding: 1.25rem;
+  }
+
+  .github-profile-section .profile-info,
+  .github-profile-section .profile-right {
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  body #leetcode {
+    padding-block: 4rem;
+  }
+
+  .leetcode-container .left-content {
+    text-align: center;
+  }
+
+  .badges-section .badges-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    justify-items: center;
+  }
+
+  .badges-container .badge-card {
+    width: min(100%, 18rem);
+  }
+
+  .timeline {
+    width: 100%;
+  }
+
+  .experience-section .timeline {
+    padding-left: 2.5rem;
+  }
+
+  .experience-section .timeline-icon {
+    left: -2.15rem;
+  }
+
+  .experience-section .timeline-content {
+    padding: 1rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .contact-info-card,
+  .contact-form-card {
+    padding: 1.25rem;
+  }
+
+  .action-buttons .btn {
+    justify-content: center;
+    min-height: 2.75rem;
+  }
+
+  .certifications-section .cert-carousel {
+    width: calc(100% - 3.5rem);
+  }
+
+  .certifications-section .cert-card {
+    width: min(20rem, calc(100vw - 6rem));
+  }
+
+  .certifications-section .slide-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1.4rem;
+  }
+
+  .blog-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer-nav {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    top: 0.5rem;
+  }
+
+  .navbar .navbar-mobile-menu {
+    max-height: calc(100vh - 4.5rem);
+  }
+
+  .hero-section {
+    padding-top: 5.5rem;
+  }
+
+  .hero-image-container {
+    min-height: 14rem;
+  }
+
+  .hero-image {
+    width: min(62vw, 15rem);
+  }
+
+  .about-statss {
+    gap: 0.75rem;
+  }
+
+  .about-statss .stat-number {
+    font-size: clamp(1.5rem, 8vw, 2.25rem);
+  }
+
+  .skill-card {
+    padding: 0.875rem 0.5rem;
+  }
+
+  .leetcode-container .left-content p {
+    font-size: 1rem;
+  }
+
+  .experience-section .timeline-content ul {
+    padding-left: 1.1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body section[id] {
+    padding-inline: 0.75rem;
+  }
+
+  .navbar {
+    width: calc(100% - 1.5rem);
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 11vw, 2.75rem);
+  }
+
+  .about-statss {
+    padding-inline: 0;
+  }
+
+  .about-statss .stat-card {
+    padding-inline: 0.5rem;
+  }
+
+  .project-details,
+  .contact-info-card,
+  .contact-form-card {
+    padding: 1rem;
+  }
+
+  .certifications-section .cert-card {
+    width: calc(100vw - 5rem);
+  }
+}
+
+@media (hover: none) {
+  .project-card .project-overlay,
+  .certifications-section .cert-overlay {
+    opacity: 1;
+  }
+
+  .project-card .project-overlay {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .certifications-section .cert-overlay {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .custom-cursor,
+  .cursor {
+    display: none;
+  }
+
+  .blog-card:hover,
+  .leetcode-container .graph:hover,
+  .about-card:hover {
+    transform: none;
+  }
+}
+
 /* =========================================
    NEW FEATURES STYLES
    ========================================= */
@@ -2822,4 +3331,245 @@ section {
 .scroll-to-top:hover {
   background-color: var(--color-blue-700);
   transform: translateY(-4px);
+}
+
+/* Light theme corrections for components with legacy hard-coded dark styles. */
+html:not(.dark) body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+html:not(.dark) body section {
+  color: var(--text-primary);
+}
+
+html:not(.dark) body .navbar-scrolled {
+  background-color: rgba(255, 255, 255, 0.94);
+  border-color: var(--border-color);
+  box-shadow: var(--theme-shadow);
+}
+
+html:not(.dark) body .navbar-mobile-menu {
+  background-color: rgba(255, 255, 255, 0.98);
+}
+
+html:not(.dark) body .navbar-mobile-link,
+html:not(.dark) body .navbar-link {
+  color: var(--text-secondary);
+}
+
+html:not(.dark) body section#about,
+html:not(.dark) body section#projects,
+html:not(.dark) body section#contact {
+  background-color: var(--bg-secondary);
+}
+
+html:not(.dark) body .about-section {
+  color: var(--text-primary);
+}
+
+html:not(.dark) body .section-title,
+html:not(.dark) body .section-title h2 {
+  color: var(--theme-accent);
+}
+
+html:not(.dark) body .about-section .section-subtitle,
+html:not(.dark) body .about-section .about-text p,
+html:not(.dark) body .about-section .about-card li,
+html:not(.dark) body .about-section .about-card ul li {
+  color: var(--text-secondary);
+}
+
+html:not(.dark) body .about-section .about-card,
+html:not(.dark) body .about-section .stat-card,
+html:not(.dark) body .skill-card,
+html:not(.dark) body .project-card-content,
+html:not(.dark) body .github-card,
+html:not(.dark) body .badge-card,
+html:not(.dark) body .blog-card,
+html:not(.dark) body .timeline-content,
+html:not(.dark) body .education-section .timeline-box,
+html:not(.dark) body .contact-info-card,
+html:not(.dark) body .contact-form-card {
+  background: var(--theme-surface-card);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  box-shadow: var(--theme-shadow);
+}
+
+html:not(.dark) body .about-section .about-card:hover,
+html:not(.dark) body .badge-card:hover,
+html:not(.dark) body .blog-card:hover,
+html:not(.dark) body .education-section .timeline-box:hover {
+  box-shadow: var(--theme-shadow-strong);
+}
+
+html:not(.dark) body .about-section .about-card h3,
+html:not(.dark) body .badge-card h3,
+html:not(.dark) body .blog-content h3,
+html:not(.dark) body .timeline-content h3,
+html:not(.dark) body .education-section .timeline-box h3,
+html:not(.dark) body .leetcode-container .left-content h3 {
+  color: var(--theme-accent);
+}
+
+html:not(.dark) body .about-section .about-card {
+  border-width: 1px;
+}
+
+html:not(.dark) body .about-section .stat-label,
+html:not(.dark) body .skill-name,
+html:not(.dark) body .project-description,
+html:not(.dark) body .profile-info p,
+html:not(.dark) body .blog-content p,
+html:not(.dark) body .timeline-content .date,
+html:not(.dark) body .contact-info-text,
+html:not(.dark) body .contact-info-link,
+html:not(.dark) body .education-section .institute,
+html:not(.dark) body .education-section .details,
+html:not(.dark) body .leetcode-container .left-content p {
+  color: var(--theme-text-muted);
+}
+
+html:not(.dark) body section#leetcode .subtitle {
+  color: var(--theme-text-muted);
+}
+
+html:not(.dark) body .about-section .stat-number,
+html:not(.dark) body .project-title,
+html:not(.dark) body .profile-info h3,
+html:not(.dark) body .timeline-content,
+html:not(.dark) body .timeline-content ul li {
+  color: var(--text-primary);
+}
+
+html:not(.dark) body .project-tag {
+  background-color: var(--color-blue-100);
+  color: var(--color-blue-700);
+}
+
+html:not(.dark) body section#github {
+  background: #eff6ff;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--theme-shadow);
+}
+
+html:not(.dark) body #github .section-title {
+  color: var(--theme-accent);
+}
+
+html:not(.dark) body #github .calendar {
+  background: var(--theme-surface-card);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+html:not(.dark) body .github-profile-section .github-card {
+  border-color: var(--border-color);
+}
+
+html:not(.dark) body .github-profile-section .profile-right,
+html:not(.dark) body .github-profile-section .profile-right p {
+  color: var(--text-primary);
+}
+
+html:not(.dark) body section#leetcode {
+  background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+  color: var(--text-primary);
+}
+
+html:not(.dark) body .leetcode-container .graph {
+  border-color: var(--border-color);
+  box-shadow: var(--theme-shadow);
+}
+
+html:not(.dark) body .badge-card {
+  background: var(--theme-surface-card);
+  color: var(--text-primary);
+}
+
+html:not(.dark) body .badge-card p {
+  color: var(--theme-text-muted);
+}
+
+html:not(.dark) body section#blogs {
+  background: linear-gradient(135deg, #f8fafc, #eff6ff);
+  color: var(--text-primary);
+}
+
+html:not(.dark) body .blog-content a,
+html:not(.dark) body .view-profile-btn {
+  color: var(--color-white);
+}
+
+html:not(.dark) body section#experience {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+html:not(.dark) body .experience-section .timeline-content {
+  border-color: var(--border-color);
+}
+
+html:not(.dark) body .experience-section .timeline-content .company {
+  color: var(--theme-accent);
+}
+
+html:not(.dark) body .experience-section .timeline-content .tags span {
+  background: var(--theme-surface-raised);
+  color: var(--text-secondary);
+}
+
+html:not(.dark) body section#certifications {
+  background: #f3f6fb;
+  color: var(--text-primary);
+}
+
+html:not(.dark) body .certifications-section .cert-card {
+  box-shadow: var(--theme-shadow);
+}
+
+html:not(.dark) body section#education {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+html:not(.dark) body .contact-info-title,
+html:not(.dark) body .form-label {
+  color: var(--text-primary);
+}
+
+html:not(.dark) body .form-input,
+html:not(.dark) body .form-textarea {
+  background-color: var(--theme-surface-card);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+html:not(.dark) body .form-input::placeholder,
+html:not(.dark) body .form-textarea::placeholder {
+  color: var(--theme-text-muted);
+}
+
+html:not(.dark) body .education-section .timeline-box::before {
+  background: var(--color-blue-500);
+}
+
+html:not(.dark) body .footer {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+html:not(.dark) body .footer-copyright,
+html:not(.dark) body .footer-built-with {
+  color: var(--theme-text-muted);
+}
+
+html:not(.dark) body .social-link {
+  background-color: var(--color-gray-100);
+}
+
+html:not(.dark) body .custom-cursor {
+  color: var(--text-primary);
 }
