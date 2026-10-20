@@ -11,8 +11,16 @@ const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 const loadingScreen = document.getElementById('loading-screen');
 const customCursor = document.getElementById('custom-cursor');
-const contactForm = document.getElementById('contact-form');
 const typewriterElement = document.getElementById('typewriter');
+
+const updateThemeAssets = (isDark) => {
+  const leetcodeGraph = document.querySelector('.leetcode-container .graph');
+  if (!leetcodeGraph) return;
+
+  const graphUrl = new URL(leetcodeGraph.src);
+  graphUrl.searchParams.set('theme', isDark ? 'dark' : 'light');
+  leetcodeGraph.src = graphUrl.toString();
+};
 
 // Theme Management
 const initTheme = () => {
@@ -29,6 +37,7 @@ const initTheme = () => {
     document.documentElement.classList.remove('dark');
     themeIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-500"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>';
   }
+  updateThemeAssets(isDark);
 };
 
 const toggleTheme = () => {
@@ -43,6 +52,7 @@ const toggleTheme = () => {
     localStorage.setItem('theme', 'dark');
     themeIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>';
   }
+  updateThemeAssets(!isDark);
 };
 
 // Navbar Scroll Effect
@@ -55,15 +65,16 @@ const handleScroll = () => {
 };
 
 // Mobile Menu Toggle
+const setMobileMenuOpen = (isOpen) => {
+  navbarMenu.classList.toggle('open', isOpen);
+  navbarToggle.setAttribute('aria-expanded', String(isOpen));
+  navbarToggle.innerHTML = isOpen
+    ? '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>'
+    : '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>';
+};
+
 const toggleMobileMenu = () => {
-  navbarMenu.classList.toggle('open');
-  
-  // Toggle between menu and close icons
-  if (navbarMenu.classList.contains('open')) {
-    navbarToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>';
-  } else {
-    navbarToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>';
-  }
+  setMobileMenuOpen(!navbarMenu.classList.contains('open'));
 };
 
 // Active Section Tracking
@@ -204,10 +215,9 @@ document.addEventListener('DOMContentLoaded', () => {
   navbarToggle.addEventListener('click', toggleMobileMenu);
   
   // Close mobile menu when clicking a link
-  mobileNavLinks.forEach(link => {
+  document.querySelectorAll('.navbar-mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
-      navbarMenu.classList.remove('open');
-      navbarToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>';
+      setMobileMenuOpen(false);
     });
   });
   
@@ -221,8 +231,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const cursor = document.querySelector(".cursor");
   if (cursor) {
     document.addEventListener("mousemove", (e) => {
+      const cursorEdge = 20;
+      const isAwayFromViewportEdges =
+        e.clientX >= cursorEdge &&
+        e.clientY >= cursorEdge &&
+        e.clientX <= window.innerWidth - cursorEdge &&
+        e.clientY <= window.innerHeight - cursorEdge;
+
+      if (!isAwayFromViewportEdges) {
+        cursor.classList.remove("is-visible");
+        return;
+      }
+
       cursor.style.left = e.clientX + "px";
       cursor.style.top = e.clientY + "px";
+      cursor.classList.add("is-visible");
     });
     
     // Add hover effect for text elements
@@ -247,11 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
       "Tech Explorer"
     ];
     new TypeWriter(typewriterElement, roles, 100);
-  }
-  
-  // Initialize contact form
-  if (contactForm) {
-    contactForm.addEventListener('submit', handleFormSubmit);
   }
   
   // Trigger initial scroll event to set navbar state
@@ -482,4 +500,3 @@ const initTimelineObserver = () => {
     }
   });
 })();
-
