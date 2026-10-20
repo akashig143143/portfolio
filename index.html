@@ -55,12 +55,6 @@
         <a href="#certifications" class="navbar-link">Certifications</a>
         <a href="#education" class="navbar-link">Education</a>
         
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <div id="theme-icon" class="theme-toggle-icon">
-           
-          </div>
-        </button>
-        
         <a href="#contact" class="navbar-cta">
           Request a Project
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -71,7 +65,10 @@
       </div>
       
       <div class="flex lg:hidden items-center space-x-2">
-        <button id="navbar-toggle" class="navbar-mobile-toggle" aria-label="Toggle menu">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <div id="theme-icon" class="theme-toggle-icon"></div>
+        </button>
+        <button id="navbar-toggle" class="navbar-mobile-toggle" aria-label="Toggle menu" aria-controls="navbar-menu" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="4" x2="20" y1="12" y2="12"></line>
             <line x1="4" x2="20" y1="6" y2="6"></line>
@@ -194,27 +191,6 @@
           <div class="cursor-dot"></div>
           <div class="cursor-glow"></div>
         </div>
-
-        <script>
-          const cursor = document.querySelector(".cursor");
-
-      // Move cursor with mouse
-      document.addEventListener("mousemove", (e) => {
-        cursor.style.left = e.clientX + "px";
-        cursor.style.top = e.clientY + "px";
-      });
-
-      // Add hover effect for text elements
-      document.querySelectorAll("p, span, a, strong, h1, h2, h3, h4, h5, h6").forEach(el => {
-        el.addEventListener("mouseenter", () => {
-          cursor.classList.add("text-hover");
-        });
-        el.addEventListener("mouseleave", () => {
-          cursor.classList.remove("text-hover");
-        });
-      });
-        </script>
-
 
           <!-- Contact Info -->
           <div class="contact-info">
